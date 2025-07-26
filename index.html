@@ -235,16 +235,12 @@
   </div>
 </section>
 
-<!-- ✅ LIGHTBOX añadido -->
-<div id="lightbox-overlay">
-  <span id="lightbox-close">&times;</span>
-  <img id="lightbox-img" src="" alt="lightbox">
-</div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   /* === ANIMACIONES DE SCROLL === */
   const faders = document.querySelectorAll('.fade-in, .fade-left, .fade-right, .fade-up');
+
   const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -259,29 +255,23 @@ document.addEventListener("DOMContentLoaded", function () {
     appearOnScroll.observe(fader);
   });
 
-  /* === LIGHTBOX nativo === */
-  const overlay = document.getElementById('lightbox-overlay');
-  const overlayImg = document.getElementById('lightbox-img');
-  const overlayClose = document.getElementById('lightbox-close');
-  const thumbs = document.querySelectorAll('.thumb img');
+  /* === LIGHTBOX via postMessage (con galería completa) === */
+  const allImages = Array.from(document.querySelectorAll('.image-gallery img')).map(img => ({
+    src: img.src,
+    caption: img.nextElementSibling ? img.nextElementSibling.innerText : ""
+  }));
 
-  thumbs.forEach(img => {
+  document.querySelectorAll('.image-gallery img').forEach((img, index) => {
     img.addEventListener('click', () => {
-      overlay.style.display = 'flex';
-      overlayImg.src = img.src;
+      window.parent.postMessage(
+        {
+          type: 'openLightbox',
+          items: allImages,
+          startIndex: index
+        },
+        '*'
+      );
     });
-  });
-
-  overlayClose.addEventListener('click', () => {
-    overlay.style.display = 'none';
-    overlayImg.src = '';
-  });
-
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) {
-      overlay.style.display = 'none';
-      overlayImg.src = '';
-    }
   });
 });
 </script>

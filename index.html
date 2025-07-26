@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curating Online UX Case Study</title>
+
+<style>
+  /* Global typography */
+  section { padding: 2em 15%; }
+  h1, h2, h3, h4, p, li { font-family: Futura, sans-serif; margin: 0 0 1em; }
+  h1 { font-size: 56px; line-height: 1.2; }
+  h2 { font-size: 44px; line-height: 1.2; }
+  h3, h4 { font-size: 30px; font-style: italic; background: #fff; color: #4469F5; }
+  p, li { font-size: 18px; line-height: 1.5; }
+
+  /* Two-column layouts */
+  .two-col, .two-one-col { overflow: hidden; margin-bottom: 2em; }
+  .two-col .left, .two-one-col .left { float: left; width: 45%; padding-right: 1.5rem; }
+  .two-col .right, .two-one-col .right { float: left; width: 45%; padding-left: 1.5rem; }
+  .two-one-col .left { width: 60% !important; }
+  .two-one-col .right { width: 30% !important; }
+
+  /* Multi-column text */
+  .multi { column-count: 2; column-gap: 1.5rem; column-rule: 1px solid #ccc; hyphens: auto; }
+
+  /* Section backgrounds */
+  .cs-intro    { background-color: #BFA2DB; color: white; padding-bottom: 5rem; }
+  .cs-overview { background-color: #8E6C88; color: white; }
+  .cs-goals    { background-color: #E8DAEF; color: #3D2A39; }
+  .cs-role     { background-color: #C8BFD4; color: #3D2A39; }
+  .cs-process  { background-color: #D5A6BD; color: #3D2A39; }
+  .cs-impact   { background-color: #8E6C88; color: white; }
+  .cs-gallery  { background-color: #F0E6F6; color: #3D2A39; padding: 60px 20px; text-align: center; }
+  .cs-conclusion{ background-color: #E8DAEF; color: #3D2A39; }
+  .cs-cta      { background: #6E6E6E; color: #fff; text-align: center; padding: 80px 20px; }
+
+  /* CTA styles */
+  .cta-container { max-width: 700px; margin: auto; }
+  .cs-cta h2    { font-size: 3rem; font-weight: 600; margin-bottom: 25px; }
+  .cs-cta p     { font-size: 1.25rem; line-height: 1.8; margin-bottom: 40px; }
+  .cta-button   { display: inline-block; background: #4469F5; color: #fff; padding: 16px 36px; font-size: 1.1rem; font-weight: 500;
+                  border-radius: 6px; text-decoration: none; transition: background-color .3s ease, transform .2s ease; }
+  .cta-button:hover { background: #3352c3; transform: translateY(-2px); }
+
+  /* Gallery styles */
+  .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1200px; margin: auto; }
+  .thumb img      { width: 100%; border-radius: 8px; cursor: pointer; transition: transform .3s ease; }
+  .thumb img:hover{ transform: scale(1.03); }
+  .caption        { font-size: .9em; color: #333333; margin-top: .5em; }
+
+  /* Animaciones */
+  .fade-in, .fade-left, .fade-right, .fade-up {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .fade-in { transform: translateY(20px); }
+  .fade-left { transform: translateX(-20px); }
+  .fade-right { transform: translateX(20px); }
+  .fade-up { transform: translateY(30px); }
+  .visible { opacity: 1; transform: translate(0,0); }
+
+  /* Lightbox overlay */
+  #lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    z-index: 9999;
+  }
+  #lightbox-overlay img {
+    max-width: 95vw;
+    max-height: 95vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  }
+  #lightbox-overlay span {
+    position: absolute;
+    top: 20px; right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+  }
+
+  /*Accessibility*/
+  a:focus, button:focus { outline: 2px dashed #6A4C93; outline-offset: 4px; }
+
+</style>
+</head>
+
+<body>
+
+<!-- ✅ TU CONTENIDO SE MANTIENE IGUAL (intro, overview, goals, role, process, impact, gallery, conclusion, CTA) -->
+<!-- (Pego aquí todo el contenido de tu HTML original sin cambios) -->
+
+<section class="cs-intro">
+  <div class="two-one-col">
+  <h1 class="left">Curating Online</h1>  <img class="right" src="https://static.wixstatic.com/media/2a58bc_57cae32c01b649cbb4ba86a7ecf9ad70~mv2.png">
+  </div>
+  <h3>Visual design and web development for a collaborative digital platform</h2>
+  <div class="multi">
+    <p>Curating Online is a digital platform for collective engagement in curatorial practice, led by art historian and curator Marialaura Ghidini. In 2021, I joined the project as a visual designer and developer, supporting the evolution of its visual identity and creating a fully responsive WordPress site. Working closely with the founder, I translated her creative direction into visual assets and built a clean, intuitive platform for long-term growth.</p>
+  </div>
+  <br>
+</section>
+
+<section class="cs-overview">
+  <h2>Project Overview</h2>
+  <p class="multi">The platform was conceived as a digital hub to explore curating as a process of care, research, and shared experience. My goal was to provide aesthetic coherence, structural clarity, and a flexible system that could evolve with future content and curatorial projects. Based on direction from Marialaura Ghidini, I produced graphic assets, supported layout and interaction decisions, and implemented the site on WordPress with a modular backend structure.</p>
+</section>
+
+<section class="cs-goals">
+  <h2>Goals & Challenges</h2>
+  <ul class="multi">
+    <li>Translate a conceptual vision into a functional, elegant digital platform</li>
+    <li>Design visual elements and layouts aligned with curatorial sensibilities</li>
+    <li>Build a WordPress site that is easy to update and expand over time</li>
+    <li>Balance minimalism with warmth, accessibility, and artistic personality</li>
+  </ul>
+</section>
+
+<section class="cs-role">
+  <h2>My Role</h2>
+  <p class="multi">I collaborated as a visual designer and developer, focusing on the implementation of Marialaura Ghidini’s creative vision:</p>
+  <ul class="multi">
+    <li>Created typographic and layout proposals using Figma</li>
+    <li>Developed illustrations and graphic components to enhance identity</li>
+    <li>Built and customized the WordPress site using modular page templates</li>
+    <li>Advised on structural and aesthetic decisions throughout the process</li>
+  </ul>
+</section>
+
+<section class="cs-process">
+  <h2>Process Highlights</h2>
+  <div class="steps">
+    <div class="two-col">
+      <div class="left"> 
+        <h4>1. Visual Discovery & Figma Assets</h4>
+        <p>Based on the client’s references and themes, I explored layouts, colors and type systems in Figma, sharing annotated files for review and iteration.</p>
+      </div>
+      <div class="right">
+        <h4>2. WordPress Development</h4>
+        <p>Using Elementor and custom CSS, I built reusable templates and interactive sections that reflect the platform's curatorial nature and evolving content structure.</p>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="left"> 
+        <h4>3. Design Consulting</h4>
+        <p>Throughout the collaboration, I offered strategic advice on how to align technical possibilities with curatorial needs, ensuring that visual and functional choices enhanced the visitor’s experience.</p>
+      </div>
+  </div>    
+</section>
+
+<section class="cs-impact">
+    <div class="two-col">
+      <div class="left">
+        <h2>Results & Impact</h2>
+        <p>The site became a functional home for curatorial essays, invitations to contribute, and experimental projects. The identity balances minimalism with character, and the structure is equipped to scale with future initiatives.</p>
+      </div>
+      <div class="right">
+        <h2>Key Outcomes:</h2>
+        <ul>
+          <li>Delivered a fully functional, scalable WordPress site with modular templates</li>
+          <li>Enhanced brand identity through typography, layout and soft interactivity</li>
+          <li>Enabled curators to manage and expand content with ease</li>
+          <li>Contributed to a visual framework that supports experimental online curating</li>
+        </ul>
+      </div>
+  </div>
+</section>
+
+<section class="cs-gallery">
+  <h2>Visual Snapshots</h2>
+  <div class="image-gallery">
+    <div class="thumb fade-in">
+     <!-- onclick="openLightbox(0)"> -->
+      <img src="https://static.wixstatic.com/media/2a58bc_c4fe1c70637e48c3bd99344023d8d7f2~mv2.png" alt="Curating Online – Página principal del sitio web" role="link" tabindex="0">
+      <p class="caption">Página principal del sitio Curating Online. Diseño ligero con navegación prominente, utilizando gradientes y tipografía digital para acentuar su identidad especulativa.</p>
+    </div>
+    <div class="thumb fade-in">
+     <!-- onclick="openLightbox(1)"> -->
+      <img src="https://static.wixstatic.com/media/2a58bc_b307626fa2fd4db5a757fe558318aecd~mv2.png" alt="Curating Online – Wireframe inicial de eventos" role="link" tabindex="0" />
+      <p class="caption"> Wireframe de la sección “Events”. Se definieron áreas clave para documentación expandida, incluyendo imágenes, textos y enlaces audiovisuales.</p>
+    </div>
+    <div class="thumb fade-in">
+     <!-- onclick="openLightbox(2)"> -->
+      <img src="https://static.wixstatic.com/media/2a58bc_31f64cbe14874800a13034192b6eee06~mv2.png" alt="Curating Online – Diseño tipográfico del encabezado" role="link" tabindex="0" />
+      <p class="caption">Exploración de tipografías para los encabezados del sitio: Adieu, Bastardo Groteskish y alternativas Google Fonts. Parte del trabajo incluyó testear combinaciones tipográficas en pantalla.</p>
+    </div>
+    <div class="thumb fade-in">
+     <!-- onclick="openLightbox(3)"> -->
+      <img src="https://static.wixstatic.com/media/2a58bc_31de17ebee7f4350be44c30635b0963a~mv2.png" alt="Evolución del logotipo de Curating Online" role="link" tabindex="0" />
+      <p class="caption">Proceso visual de evolución del logotipo. El juego entre las letras “C” y “O” simboliza la intersección entre plataformas, redes y prácticas curatoriales contemporáneas.</p>
+    </div>
+    <div class="thumb fade-in">
+     <!-- onclick="openLightbox(4)"> -->
+      <img src="https://static.wixstatic.com/media/2a58bc_b483389c81cb456db47029e853f61b87~mv2.png" alt="Curating Online – Pantallazo del prototipo navegable en proceso" role="link" tabindex="0" />
+      <p class="caption">Captura de una fase de pruebas del sitio, donde se testearon jerarquías visuales y estructura responsive en WordPress antes del lanzamiento.</p>
+    </div>
+    <div class="thumb fade-in">
+     <!-- onclick="openLightbox(5)"> -->
+      <img src="https://static.wixstatic.com/media/2a58bc_dd969f2937aa4f95848624dd35432f6b~mv2.png" alt="Curating Online – Menú interactivo con keywords" role="link" tabindex="0" />
+      <p class="caption">Menú interactivo del índice por palabras clave, categorizadas por tipo de intervención, infraestructura tecnológica y otras taxonomías curatoriales.</p>
+    </div>
+    <div class="thumb fade-in">
+     <!-- onclick="openLightbox(6)"> -->
+      <img src="https://static.wixstatic.com/media/2a58bc_2a07197ba229448b80bd704fe969d1d2~mv2.png" alt="Curating Online – test jerarquías visuales y estructura responsive" role="link" tabindex="0" />
+      <p class="caption">Captura de una fase de pruebas del sitio, donde se testearon jerarquías visuales y estructura responsive en WordPress antes del lanzamiento.</p>
+    </div>
+    <div class="thumb fade-in">
+     <!-- onclick="openLightbox(7)"> -->
+      <img src="https://static.wixstatic.com/media/2a58bc_9226bf02796b4ca99680c796c7197be3~mv2.png" alt="Curating Online – Arquitectura de la Información como punto de partida" role="link" tabindex="0" />
+      <p class="caption">Arquitectura de la Información como punto de partida.</p>
+    </div>
+    <!-- Puedes añadir más imágenes repitiendo la línea <img> -->
+  </div>
+</section>
+
+<section class="cs-conclusion">
+  <h2>Conclusions</h2>
+  <p class="multi">This project reflects how close visual collaboration and shared values can turn abstract curatorial ideas into a grounded and elegant online presence. It also showcases my ability to adapt to someone else's creative direction while bringing clarity and care to both design and development.</p>
+</section>
+
+<section class="cs-cta">
+  <div class="cta-container">
+    <h2>Let's collaborate</h2>
+    <p>If you’re working on meaningful curatorial, cultural or creative tech projects, I’d love to support your vision. Reach out and let’s explore what we can build together.</p>
+    <a href="https://ux-ui.rociofatas.info/contact" class="cta-button">Get in touch</a>
+  </div>
+</section>
+
+<!-- ✅ LIGHTBOX añadido -->
+<div id="lightbox-overlay">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="lightbox">
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  /* === ANIMACIONES DE SCROLL === */
+  const faders = document.querySelectorAll('.fade-in, .fade-left, .fade-right, .fade-up');
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  faders.forEach((fader, index) => {
+    fader.style.transitionDelay = `${Math.min(index * 0.03, 0.15)}s`;
+    appearOnScroll.observe(fader);
+  });
+
+  /* === LIGHTBOX nativo === */
+  const overlay = document.getElementById('lightbox-overlay');
+  const overlayImg = document.getElementById('lightbox-img');
+  const overlayClose = document.getElementById('lightbox-close');
+  const thumbs = document.querySelectorAll('.thumb img');
+
+  thumbs.forEach(img => {
+    img.addEventListener('click', () => {
+      overlay.style.display = 'flex';
+      overlayImg.src = img.src;
+    });
+  });
+
+  overlayClose.addEventListener('click', () => {
+    overlay.style.display = 'none';
+    overlayImg.src = '';
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.style.display = 'none';
+      overlayImg.src = '';
+    }
+  });
+});
+</script>
+
+</body>
+</html>

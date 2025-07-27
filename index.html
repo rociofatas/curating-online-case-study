@@ -91,7 +91,9 @@
   /*Accessibility*/
   a:focus, button:focus { outline: 2px dashed #6A4C93; outline-offset: 4px; }
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+
+  /* 📏 Ajustes generales de tipografía y espaciado */
   section { padding: 1.5em 5%; }
   h1 { font-size: 32px; }
   h2 { font-size: 26px; }
@@ -120,17 +122,35 @@
     gap: 15px;
   }
 
+  /* 🎯 IMAGEN INICIAL - Que ocupe todo el ancho */
+  .cs-intro img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+
   /* ✍️ CTA más cómodo en móvil */
   .cs-cta h2 { font-size: 24px; }
   .cs-cta p { font-size: 16px; }
+
+  /* 🔘 CTA botón */
   .cta-button { 
     display: block;
     width: 100%;
+    max-width: 90%;    /* 🔥 nuevo: que no sobresalga */
+    margin: 0 auto;    /* 🔥 nuevo: centrado */
     text-align: center;
     padding: 14px;
     font-size: 16px;
   }
+
+  /* 🔲 Contenedor CTA ajustado */
+  .cs-cta {
+    padding: 50px 15px; /* 🔥 nuevo: menos padding en móvil */
+  }
 }
+
 
 </style>
 </head>

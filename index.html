@@ -104,8 +104,8 @@
   .two-col .left, .two-col .right,
   .two-one-col .left, .two-one-col .right {
     float: none;
-    width: 100%;
-    padding: 0;
+    width: 100% !important;
+    padding: 0 !important;
     margin-bottom: 1.5em;
   }
 
@@ -122,24 +122,33 @@
     gap: 15px;
   }
 
-  /* 🎯 IMAGEN INICIAL - Que ocupe todo el ancho */
-  .cs-intro img {
-    width: 100% !important;
+  /* 🎯 IMAGEN INICIAL – Forzamos ancho completo */
+  .cs-intro .right img {
+    width: 100vw !important;    /* 🔥 ocupa todo el viewport */
+    max-width: 100% !important;
     height: auto !important;
     display: block;
     margin: 0 auto;
+  }
+
+  /* 🔧 Contenedor de la imagen para que no limite ancho */
+  .cs-intro .right {
+    width: 100% !important;
+    float: none !important;
+    padding: 0 !important;
+    text-align: center;
   }
 
   /* ✍️ CTA más cómodo en móvil */
   .cs-cta h2 { font-size: 24px; }
   .cs-cta p { font-size: 16px; }
 
-  /* 🔘 CTA botón */
+  /* 🔘 CTA botón (que no sobresalga nunca) */
   .cta-button { 
     display: block;
     width: 100%;
-    max-width: 90%;    /* 🔥 nuevo: que no sobresalga */
-    margin: 0 auto;    /* 🔥 nuevo: centrado */
+    max-width: 90%;    /* 🔥 margen interno para evitar overflow */
+    margin: 0 auto;    /* 🔥 centrado */
     text-align: center;
     padding: 14px;
     font-size: 16px;
@@ -147,7 +156,7 @@
 
   /* 🔲 Contenedor CTA ajustado */
   .cs-cta {
-    padding: 50px 15px; /* 🔥 nuevo: menos padding en móvil */
+    padding: 50px 15px; /* 🔥 menos padding en móvil */
   }
 }
 

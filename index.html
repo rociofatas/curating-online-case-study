@@ -317,5 +317,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+window.addEventListener("load", function() {
+  // medimos el alto del body
+  const height = document.body.scrollHeight;
+  // enviamos el dato al parent (Wix)
+  parent.postMessage({ iframeHeight: height }, "*");
+});
+</script>
+
 </body>
 </html>

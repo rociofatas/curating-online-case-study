@@ -160,6 +160,28 @@
   }
 }
 
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+}
+
+.top-nav nav {
+  display: flex;
+  gap: 24px;
+}
+
+.top-nav a,
+.back-link a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.back-link {
+  padding: 0 32px 24px 32px;
+}
+
 
 </style>
 </head>
@@ -168,7 +190,18 @@
 
 <!-- ✅ TU CONTENIDO SE MANTIENE IGUAL (intro, overview, goals, role, process, impact, gallery, conclusion, CTA) -->
 <!-- (Pego aquí todo el contenido de tu HTML original sin cambios) -->
+<header class="top-nav">
+  <div class="brand"><a href="https://TU-HOME-AQUI">Rocío Fatás</a></div>
+  <nav>
+    <a href="https://TU-HOME-AQUI">Home</a>
+    <a href="https://TU-ABOUT-AQUI">About</a>
+  </nav>
+</header>
 
+<div class="back-link">
+  <a href="https://TU-HOME-AQUI#selected-work">← Back to selected work</a>
+</div>
+  
 <section class="cs-intro">
   <div class="two-one-col">
   <h1 class="left">Curating Online</h1>  <img class="right" src="https://static.wixstatic.com/media/2a58bc_57cae32c01b649cbb4ba86a7ecf9ad70~mv2.png">
